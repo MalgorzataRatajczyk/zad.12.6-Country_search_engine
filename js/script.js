@@ -1,5 +1,5 @@
 "use strict"
-// zmienne z adresem url i z listą krajów
+// zmienna z adresem url i z listą krajów
 var url = 'https://restcountries.eu/rest/v1/name/';
 var countriesList = document.getElementById('countries');
 
@@ -21,31 +21,46 @@ function searchCountries() {
 
 // funkcja pokazująca listę krajów
 function showCountriesList(resp) {
-    
+    			
     countriesList.innerHTML = ''; //wyczyszczenie listy krajów po poprzednim zapytaniu
     resp.forEach(function(item) {
-        var liEl = document.createElement('li');
-        liEl.innerText = item.name;
-        countriesList.appendChild(liEl);
-
-        var liE2 = document.getElementById('continent');
-        liE2.innerText = item.region;
-
-        var liE3 = document.getElementById('capital');
-        liE3.innerText = item.capital;
-    
-        var liE4 = document.getElementById('area');
-        liE4.innerText = item.area;
-      
-        var liE5 = document.getElementById('population');
-        liE5.innerText = item.population;
-
-        var liE6 = document.getElementById('language');
-        liE6.innerText = item.languages;
-
-        var liE7 = document.getElementById('currency');
-        liE7.innerText = item.currencies;
-
+			
+			// zmienna z kodem HTML tabeli
+			var table = ' \
+				<table> \
+					<thead> \
+						<tr><th></th><th>' + item.name + '</th></tr> \
+					</thead> \
+					<tbody> \
+						<tr> \
+							<th colspan="2">Background Information:</th></tr> \
+						<tr> \
+							<th>Continent:</th><td id="continent">' + item.region + '</td> \
+						</tr> \
+						<tr> \
+							<th>Capital:</th><td id="capital">' + item.capital + '</td> \
+						</tr> \
+						<tr> \
+							<th>Land area:</th><td id="area">' + item.area + '</td> \
+						</tr> \
+						<tr> \
+							<th>Population:</th><td id="population">' + item.population + '</td> \
+						</tr>\
+						<tr> \
+							<th>Language(s):</th><td id="language">' + item.languages + '</td> \
+						</tr> \
+						<tr> \
+							<th>Currency:</th><td id="currency">' + item.currencies + '</td> \
+						</tr> \
+					</tbody> \
+				</table>';
+			
+			// wstawienie tabeli do div'a o id "countryTable"
+			var finalTable = document.getElementById('countryTable').innerHTML += table;
+			
     });
 
   }
+
+  
+
