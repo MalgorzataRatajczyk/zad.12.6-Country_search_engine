@@ -4,14 +4,16 @@ body { margin: 0 auto; background-color: gray; width: 100%; max-width: 1200px; }
 
 button { width: 200px; height: 50px; border-radius: 15px; border: 1px solid #fafafa; font-size: 20px; font-weight: bold; background-color: #00007f; color: #fafafa; }
 
-input { width: 300px; height: 25px; }
+input { width: 300px; height: 25px; border-radius: 5px; }
 
 ul li { list-style-type: none; text-align: center; font-size: 20px; font-weight: bold; text-transform: uppercase; }
 
-table { border: none; width: 60%; margin: 0 auto; border-collapse: separate; }
+table { border: none; width: 60%; margin: 10px auto; border-collapse: separate; }
 
-table caption { font-size: 20px; font-weight: bold; text-align: center; background-color: #00007f; color: #fafafa; }
+table thead tr th { font-size: 25px; font-weight: bold; text-transform: uppercase; color: #00007f; text-align: left; background-color: #fafafa; }
 
-table tbody tr th { width: 20%; background-color: #fecc01; font-size: bold; text-align: left; }
+table tbody tr th { width: 20%; background-color: #fecc01; font-weight: bold; font-size: 16px; text-align: left; }
 
-table tbody tr td { width: 40%; background-color: #fefea6; font-size: bold; text-align: left; }
+table tbody tr td { width: 40%; background-color: #fefea6; font-weight: bold; font-size: 16px; text-align: left; }
+
+tbody > tr:first-child th { font-size: 20px; font-weight: bold; text-align: center; background-color: #00007f; color: #fafafa; }
