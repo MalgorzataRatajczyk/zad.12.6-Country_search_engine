@@ -1,7 +1,7 @@
 "use strict"
 // zmienna z adresem url i z listą krajów
 var url = 'https://restcountries.eu/rest/v1/name/';
-var countriesList = document.getElementById('countries');
+var countriesList = document.getElementById('countryTable');
 
 // podpięcie żądania pod przycisk z id search
 document.getElementById('search').addEventListener('click', searchCountries);
@@ -22,7 +22,7 @@ function searchCountries() {
 // funkcja pokazująca listę krajów
 function showCountriesList(resp) {
     			
-    countriesList.innerHTML = ''; //wyczyszczenie listy krajów po poprzednim zapytaniu
+    countryTable.innerHTML = ''; //wyczyszczenie listy krajów po poprzednim zapytaniu
     resp.forEach(function(item) {
 			
 			// zmienna z kodem HTML tabeli
